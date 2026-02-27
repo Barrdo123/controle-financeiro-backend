@@ -31,7 +31,6 @@ const registerController = {
             type,
             description,
             value,
-            userId: req.user.id,
             })
 
         return res.status(201).json(register);
@@ -97,7 +96,9 @@ const registerController = {
 
             await register.destroy()
 
-            return res.json(register);
+            return res.json({
+            message: `Register ${id} deleted successfully`
+            });
 
         }catch(error){
             console.error(error);
