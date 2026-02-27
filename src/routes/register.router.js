@@ -7,5 +7,7 @@ const registerRouter = express.Router();
 registerRouter.post("/registrations/create", authMiddleware, registerController.createRegister);
 registerRouter.put("/registrations/update/:id", authMiddleware, registerController.updateRegister);
 registerRouter.delete("/registrations/delete/:id", authMiddleware, registerController.deleteRegister);
+registerRouter.post("/registrations/report", authMiddleware, registerController.reportRegister);
+
 
 export default registerRouter;
