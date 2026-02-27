@@ -43,7 +43,7 @@ const userController = {
                 const token = jwt.sign(
                     {id: user.id, email: user.email},
                     process.env.JWT_SECRET,
-                    {expiresIn: process.env.JWT_EXPIRE_IN}
+                    {expiresIn: process.env.JWT_EXPIRES_IN}
                 )
 
                 return res.json({token});

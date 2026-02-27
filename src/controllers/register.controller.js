@@ -105,6 +105,24 @@ const registerController = {
                 message: "Error in delete register"
             })
         }
+    },
+
+    async reportRegister(req, res) {
+        try {
+            const register =  await Registration.findAll({
+                where: {
+                    userId: req.user.id,
+                },
+                order:[["createdAt", "DESC"]],
+            });
+
+            return res.json(register);
+
+        } catch (error) {
+            res.status(500).json({
+                message: "Error generating report "
+            });
+        }
     }
 
 
